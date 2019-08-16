@@ -1,4 +1,5 @@
 # ActiveModelJsonValidator
+[![Build Status](https://travis-ci.org/alejandrodevs/activemodel_json_validator.png?branch=master)](https://travis-ci.org/alejandrodevs/activemodel_json_validator) [![Coverage Status](https://coveralls.io/repos/github/alejandrodevs/activemodel_json_validator/badge.svg?branch=master)](https://coveralls.io/github/alejandrodevs/activemodel_json_validator?branch=master)
 
 This gem aims to provide an easy way to validate json and jsonb attributes against a JSON schema. This gem is based on ActiveModel and [`json-schema`](https://github.com/ruby-json-schema/json-schema).
 
