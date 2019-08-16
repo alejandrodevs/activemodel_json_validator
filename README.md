@@ -1,8 +1,6 @@
-# ActivemodelJsonValidator
+# ActiveModelJsonValidator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/activemodel_json_validator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem aims to provide an easy way to validate json and jsonb attributes against a JSON schema. This gem is based on ActiveModel and [`json-schema`](https://github.com/ruby-json-schema/json-schema).
 
 ## Installation
 
@@ -26,12 +24,11 @@ Add your json validation in the model:
 
 ```ruby
 class User < ApplicationRecord
-  # Validations
   validates :preferences, json: true
 end
 ```
 
-By default, this validation will find an schema in:
+By default this validation will find an schema in:
 `app/models/schemas/user/preferences.json`.
 
 ```json
@@ -43,7 +40,6 @@ By default, this validation will find an schema in:
     "currency"
   ],
   "properties": {
-    "theme": { "type": "string" },
     "locale": { "type": "string" },
     "currency": { "type": "string" },
     "subscribed": { "type": "boolean" }
@@ -51,14 +47,13 @@ By default, this validation will find an schema in:
 }
 ```
 
-A custom schema path could be passed to the validator:
+Custom schema path could be passed to the validator:
 
 ```ruby
 class User < ApplicationRecord
-  PREFERENCES_SCHEMA = Rails.root.join('config', 'schemas', 'preferences.json').to_s
-
-  # Validations
-  validates :preferences, json: { schema: PREFERENCES_SCHEMA }
+  validates :preferences, json: {
+    schema: Rails.root.join('schemas', 'preferences.json').to_s
+  }
 end
 ```
 
