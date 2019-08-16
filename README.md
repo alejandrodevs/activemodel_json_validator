@@ -22,7 +22,45 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add your json validation in the model:
+
+```ruby
+class User < ApplicationRecord
+  # Validations
+  validates :preferences, json: true
+end
+```
+
+By default, this validation will find an schema in:
+`app/models/schemas/user/preferences.json`.
+
+```json
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "required": [
+    "locale",
+    "currency"
+  ],
+  "properties": {
+    "theme": { "type": "string" },
+    "locale": { "type": "string" },
+    "currency": { "type": "string" },
+    "subscribed": { "type": "boolean" }
+  }
+}
+```
+
+A custom schema path could be passed to the validator:
+
+```ruby
+class User < ApplicationRecord
+  PREFERENCES_SCHEMA = Rails.root.join('config', 'schemas', 'preferences.json').to_s
+
+  # Validations
+  validates :preferences, json: { schema: PREFERENCES_SCHEMA }
+end
+```
 
 ## Development
 
@@ -32,7 +70,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/activemodel_json_validator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/alejandrodevs/activemodel_json_validator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +78,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ActivemodelJsonValidator project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/activemodel_json_validator/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ActivemodelJsonValidator project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/alejandrodevs/activemodel_json_validator/blob/master/CODE_OF_CONDUCT.md).
