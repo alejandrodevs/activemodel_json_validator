@@ -9,3 +9,8 @@ rvm:
 
 before_install:
   - gem install bundler -v 2.0.2
+
+gemfile:
+  - gemfiles/activemodel_4.2.gemfile
+  - gemfiles/activemodel_5.2.gemfile
+  - gemfiles/activemodel_6.0.gemfile
