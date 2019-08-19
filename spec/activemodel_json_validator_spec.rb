@@ -47,7 +47,7 @@ RSpec.describe ActiveModel::JsonValidator do
 
     it 'adds error in json attribute' do
       expect(user).to be_invalid
-      scope = [:activemodel, :errors, :models, :user, :attributes, :data]
+      scope = [:errors, :messages]
       expect(user.errors[:data]).to include I18n.t(:invalid_json, scope: scope)
     end
 

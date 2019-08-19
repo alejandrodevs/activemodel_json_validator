@@ -1,6 +1,6 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'activemodel/json_validator/version'
+require 'active_model/json_validator/version'
 
 Gem::Specification.new do |spec|
   spec.name         = 'activemodel_json_validator'
