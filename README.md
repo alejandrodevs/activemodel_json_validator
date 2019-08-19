@@ -48,6 +48,16 @@ By default this validation will find an schema in:
 }
 ```
 
+```ruby
+user = User.new
+user.preferences = { locale: 'en', currency: 'USD' }
+user.valid? # => true
+
+user.preferences = { currency: 100, subscribed: 'true' }
+user.valid? # => false
+user.errors[:preferences] # => Invalid json
+```
+
 Custom schema path could be passed to the validator:
 
 ```ruby
