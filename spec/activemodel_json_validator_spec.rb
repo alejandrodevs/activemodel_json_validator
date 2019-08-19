@@ -39,6 +39,7 @@ RSpec.describe ActiveModel::JsonValidator do
   context 'when json is invalid' do
     let(:data) do
       {
+        locale: 'en',
         currency: 1_000,
         subscribed: 'Invalid'
       }
