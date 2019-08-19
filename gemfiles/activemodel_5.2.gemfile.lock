@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    activemodel_json_validator (0.1.0)
+    activemodel_json_validator (0.1.1)
       activemodel (>= 4.2)
       json-schema (~> 2.8)
 
