@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'bundler/setup'
 require 'activemodel_json_validator'
 
