@@ -31,4 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'appraisal', '~> 2.2'
   spec.add_development_dependency 'simplecov', '~> 0.17'
   spec.add_development_dependency 'coveralls', '~> 0.7.2'
+
+  spec.add_dependency 'activemodel', '>= 4.2'
+  spec.add_dependency 'json-schema', '~> 2.8'
 end

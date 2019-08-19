@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "required": [
+    "locale",
+    "currency"
+  ],
+  "properties": {
+    "locale": { "type": "string" },
+    "currency": { "type": "string" },
+    "subscribed": { "type": "boolean" }
+  }
+}
