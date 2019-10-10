@@ -21,7 +21,9 @@ class JsonValidator < ActiveModel::EachValidator
   end
 
   def default_root_path
-    Rails.root.join.to_s if defined?(Rails)
+    require 'rails'
+    Rails.root.join.to_s
+  rescue LoadError
     File.join.to_s
   end
 
