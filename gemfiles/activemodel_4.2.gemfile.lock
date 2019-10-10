@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    activemodel_json_validator (0.1.1)
+    activemodel_json_validator (0.1.2)
       activemodel (>= 4.2)
       json-schema (~> 2.8)
 
@@ -16,8 +16,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     appraisal (2.2.0)
       bundler
       rake
@@ -38,7 +38,7 @@ GEM
     json-schema (2.8.1)
       addressable (>= 2.4)
     minitest (5.11.3)
-    public_suffix (3.1.1)
+    public_suffix (4.0.1)
     rake (12.3.3)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
